@@ -1,5 +1,5 @@
 {
-  "name": "printout",
+  "name": "@jihadnpm/printout",
   "version": "1.0.0",
   "description": "Printout is a small JavaScript library that makes printing HTML elements easier with it's current design.",
   "main": "printout.js",
