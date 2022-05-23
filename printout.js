@@ -37,11 +37,18 @@
         let win = window.open('', ''),
             head = '<meta charset="UTF-8"><title>' + config.pageTitle + '</title>';
 
+        // Converting style relative path to absolute path and return a corrected link tag
+        const getLink = (link) => {
+            let clone = link.cloneNode(true);
+            clone.href = (new URL(clone.href, location)).href
+            return clone.outerHTML;
+        };
+
         // Get all the link tags and append them to the head
         if (config.importCSS) {
             let links = document.querySelectorAll('link');
             for (let i = 0; i < links.length; i++) {
-                head += links[i].outerHTML;
+                head += getLink(links[i]);
             }
         }
 
@@ -72,15 +79,10 @@
 
         if (config.autoPrint) {
             // Allow stylesheets time to load
-            const autoPrint = () => {
+            win.setTimeout(() => {
                 win.print();
                 win.close();
-            }
-            if (navigator.userAgent.match(/Trident\/\d.\d/)) { // IE needs to call this without a setTimeout
-                autoPrint();
-            } else {
-                win.setTimeout(autoPrint, config.autoPrintDelay);
-            }
+            }, config.autoPrintDelay);
         }
     };
 }));
