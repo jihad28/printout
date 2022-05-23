@@ -1,0 +1,19 @@
+{
+  "name": "printout",
+  "version": "1.0.0",
+  "description": "Printout is a small JavaScript library that makes printing HTML elements easier with it's current design.",
+  "main": "printout.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jihad28/printout.git"
+  },
+  "author": "Jihad Hashm",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jihad28/printout/issues"
+  },
+  "homepage": "https://github.com/jihad28/printout#readme"
+}
