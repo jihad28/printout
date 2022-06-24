@@ -60,6 +60,9 @@
             }
         }
 
+        // Set new document direction to main document direction
+        win.document.documentElement.setAttribute('dir', document.documentElement.getAttribute('dir'))
+
         win.document.head.innerHTML = head;
         // Set header
         win.document.body.innerHTML = config.header;
