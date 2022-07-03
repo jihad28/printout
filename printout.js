@@ -14,6 +14,7 @@
             inlineStyle: true, // If true it takes inline style tag 
             autoPrint: true, // Print automatically when the page is open
             autoPrintDelay: 1000, // Delay in milliseconds before printing
+            closeAfterPrint: true, // Close the window after printing
             header: null, // String or element this will be appended to the top of the printout
             footer: null, // String or element this will be appended to the bottom of the printout
             noPrintClass: 'no-print' // Class to remove the elements that should not be printed
@@ -84,7 +85,9 @@
             // Allow stylesheets time to load
             win.setTimeout(() => {
                 win.print();
-                win.close();
+                if (config.closeAfterPrint) {
+                    win.close();
+                }
             }, config.autoPrintDelay);
         }
     };
